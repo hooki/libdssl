@@ -387,7 +387,7 @@ int ssl_detect_server_hello_version( u_char* data, uint32_t len, uint16_t* ver )
 
 		if( *ver != sever_hello_ver ) rc = NM_ERROR( DSSL_E_SSL_PROTOCOL_ERROR );
 	}
-	else if( data[0] == SSL3_RT_ALERT && len == 7 && data[1] == SSL3_VERSION_MAJOR &&
+	else if( data[0] == SSL3_RT_ALERT && len => 7 && data[1] == SSL3_VERSION_MAJOR &&
 			MAKE_UINT16( data[3], data[4] ) == 2 )
 	{
 		/* this is an SSL3 Alert message - the server didn't like this session */
